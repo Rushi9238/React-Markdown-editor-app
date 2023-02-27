@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import InputText from './Components/InputText';
+import Navbar from './Components/Navbar';
+import OutputText from './Components/OutputText';
+import {useState} from 'react'
 
 function App() {
+  const[val,setval]=useState("");
   return (
+   <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='topdiv'>
+      <Navbar/>
+      </div>
+      <div className='bottomdiv'>
+
+      <InputText val={val} setval={setval}/>
+      <OutputText val={val}/>
+      </div>
     </div>
+   </>
   );
 }
 
